@@ -105,229 +105,6 @@
     .congrats-list::-webkit-scrollbar { width: 4px; }
     .congrats-list::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
 
-    /* MODAL (can be reused for puzzle win or congrats) */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal-box { background: linear-gradient(160deg, #1e160a, #120e08); border: 1px solid var(--gold); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; max-width: 420px; width: 100%; transform: scale(0.9); transition: transform 0.3s; }
-    .modal-overlay.open .modal-box { transform: scale(1); }
-    .modal-box h3 { font-family: 'Aref Ruqaa Ink', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 0.8rem; }
-    .modal-box p { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--gold-light); line-height: 2; }
-    .modal-close { margin-top: 1.5rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Amiri', serif; font-size: 1rem; padding: 0.6rem 2rem; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
-    .modal-close:hover { background: var(--gold); color: var(--deep); }
-
-    /* PUZZLE */
-    .game-hint { font-family: 'Amiri', serif; font-size: clamp(1rem, 3vw, 1.15rem); color: var(--gold-light); opacity: 0.8; margin-bottom: 0.3rem; line-height: 1.8; }
-    .game-hint-gift { font-family: 'Amiri', serif; font-size: 1rem; color: var(--gold); margin-bottom: 1.5rem; }
-    .puzzle-stats { display: flex; justify-content: center; gap: 2.5rem; font-family: 'Amiri', serif; color: var(--gold-light); font-size: 1rem; margin-bottom: 1rem; }
-    .puzzle-stats span { color: var(--gold); font-weight: bold; }
-
-    .puzzle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; max-width: 300px; margin: 0 auto 1.2rem; direction: ltr; }
-    .puzzle-tile { aspect-ratio: 1; background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06)); border: 1.5px solid rgba(201,168,76,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(1.1rem, 4vw, 1.6rem); color: var(--cream); cursor: pointer; transition: background 0.15s, transform 0.12s; user-select: none; -webkit-user-select: none; font-weight: 700; }
-    .puzzle-tile:not(.empty):hover { background: rgba(201,168,76,0.3); transform: scale(1.05); }
-    .puzzle-tile.empty { background: rgba(0,0,0,0.4); border-color: rgba(201,168,76,0.1); cursor: default; }
-    .puzzle-tile.can-move { border-color: rgba(201,168,76,0.7); box-shadow: 0 0 8px rgba(201,168,76,0.25); }
-
-    .puzzle-actions { display: flex; justify-content: center; }
-    .puzzle-reset { background: transparent; border: 1px solid rgba(201,168,76,0.4); color: var(--gold-light); font-family: 'Amiri', serif; font-size: 0.95rem; padding: 0.45rem 1.4rem; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
-    .puzzle-reset:hover { border-color: var(--gold); color: var(--gold); }
-
-    .puzzle-win { display: none; margin-top: 1.2rem; padding: 1.2rem; border: 1px solid var(--gold); border-radius: 12px; background: rgba(201,168,76,0.08); }
-    .puzzle-win h4 { font-family: 'Aref Ruqaa Ink', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 0.4rem; }
-    .puzzle-win p { font-family: 'Amiri', serif; color: var(--gold-light); font-size: 1rem; line-height: 1.9; }
-    .share-result-btn { margin-top: 0.8rem; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); border: none; border-radius: 50px; padding: 0.5rem 1.5rem; color: var(--deep); font-family: 'Amiri', serif; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; }
-    .share-result-btn:hover { transform: translateY(-2px); }
-    .replay-btn { margin-top: 0.5rem; display: inline-block; background: transparent; border: 1px solid rgba(201,168,76,0.4); color: var(--gold-light); font-family: 'Amiri', serif; font-size: 0.85rem; padding: 0.35rem 1.2rem; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
-    .replay-btn:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* MAP */
-    .map-frame { width: 100%; height: 360px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(201,168,76,0.3); margin-top: 2rem; }
-    .map-frame iframe { width: 100%; height: 100%; border: none; }
-    .map-btn { display: inline-block; margin-top: 1.2rem; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: var(--deep); font-family: 'Aref Ruqaa Ink', serif; font-size: 1rem; padding: 0.7rem 2rem; border-radius: 50px; text-decoration: none; transition: all 0.3s; }
-    .map-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.3); }
-
-    /* ORNAMENT */
-    .ornament { display: flex; align-items: center; gap: 1rem; justify-content: center; margin: 2rem 0; opacity: 0.55; }
-    .ornament-line { height: 1px; width: 80px; background: linear-gradient(90deg, transparent, var(--gold)); }
-    .ornament-line.rev { transform: scaleX(-1); }
-    .ornament-icon { color: var(--gold); font-size: 1.2rem; }
-
-    /* FOOTER */
-    footer { text-align: center; padding: 3rem 1.5rem; position: relative; z-index: 1; }
-    .footer-names { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(1.8rem, 5vw, 3rem); color: var(--gold); margin-bottom: 0.5rem; }
-    .footer-sub { font-family: 'Amiri', serif; color: var(--gold-light); opacity: 0.7; font-size: 1rem; }
-
-    @media (max-width: 480px) {
-      .section-card { padding: 2rem 1rem; }
-      .puzzle-grid { max-width: 256px; gap: 3px; }
-    }
-  </style>
-</head>
-<body>
-
-<div class="stars-bg" id="stars"></div>
-<div class="petals-layer" id="petals"></div>
-
-<audio id="bgMusic" loop>
-  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mp3" />
-</audio>
-<button class="music-btn" id="musicBtn">🔇</button>
-
-<!-- ══════ ENVELOPE INTRO ══════ -->
-<div id="envelope-screen">
-  <div class="intro-petals" id="introPetals"></div>
-  <div class="envelope-wrap">
-    <div class="monogram">م <span>&</span> آ</div>
-    <p class="intro-subtitle">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-    <p style="font-family:'Lateef',serif;color:var(--gold);font-size:1.3rem;margin-bottom:0.3rem;">دعوة عقد قران</p>
-    <p class="intro-names">مُحَمَّد & آلاء</p>
-    <button class="enter-btn" id="enterBtn"><span>تفضلوا بالدخول ✨</span></button>
-  </div>
-</div>
-
-<!-- ══════ MAIN CONTENT ══════ -->
-<div id="main-content">
-
-  <section class="hero">
-    <p class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-    <h1 class="hero-names">
-      <span class="name-gold">مُحَمَّدُ</span>
-      <span class="connector">وَ</span>
-      <span class="name-gold">آلاء</span>
-    </h1>
-    <p class="hero-dua">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا<br/>وَجَمَعَ بَيْنَكُمَا فِي خَيْر</p>
-    <div class="hero-date"><span class="date-pill">١٧ يوليو &nbsp;•&nbsp; ٢٠٢٦</span></div>
-    <div class="hero-divider"></div>
-  </section>
-
-  <section>
-    <div class="section-card">
-      <div class="icon-circle">⏳</div>
-      <h2 class="section-title">العد التنازلي</h2>
-      <p class="section-text" style="font-size:1rem;opacity:0.65;">الفرحة اقتربت!</p>
-      <div class="countdown-wrap">
-        <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">يوم</span></div>
-        <span class="countdown-sep">:</span>
-        <div class="countdown-item"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">ساعة</span></div>
-        <span class="countdown-sep">:</span>
-        <div class="countdown-item"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">دقيقة</span></div>
-        <span class="countdown-sep">:</span>
-        <div class="countdown-item"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">ثانية</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-card">
-      <div class="icon-circle">🕗</div>
-      <h2 class="section-title">موعدنا</h2>
-      <p class="section-text">الجمعة، الساعة 8:00 مساءً<br/>١٧ يوليو ٢٠٢٦</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-card">
-      <div class="icon-circle">📍</div>
-      <h2 class="section-title">المكان</h2>
-      <p class="section-text">مجمع قاعات فندق اكوا هاوس<br/>مدينة نصر، القاهرة</p>
-      <div class="map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6513011759!2d31.32012431511487!3d30.04444488188548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e9e0a6e1e0b%3A0x5c1f3b3e8f3e2a09!2sAqua%20House%20Hotel!5e0!3m2!1sen!2seg!4v1688555555555" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <a class="map-btn" href="https://goo.gl/maps/..." target="_blank" rel="noopener">فتح في خرائط جوجل</a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-card">
-      <div class="icon-circle">🤲</div>
-      <h2 class="section-title">بارك لنا بدعوة من قلبك</h2>
-      <p class="section-text" style="font-size:1rem;opacity:0.65;">أسعدنا بكلمة طيبة وتهنئة من قلبك</p>
-      <div class="congrats-form">
-        <input type="text" class="congrats-input" id="congratsName" placeholder="اسمك الكريم" />
-        <textarea class="congrats-input" id="congratsMsg" rows="3" placeholder="اكتب تهنئتك هنا..."></textarea>
-        <button class="send-btn" id="sendBtn">إرسال التهنئة ✨</button>
-      </div>
-      <div class="congrats-list" id="congratsList"></div>
-    </div>
-  </section>
-
-  <div class="ornament"><div class="ornament-line"></div><span class="ornament-icon">💍</span><div class="ornament-line rev"></div></div>
-
-  <!-- PUZZLE GAME -->
-  <section>
-    <div class="section-card">
-      <div class="icon-circle">🎮</div>
-      <h2 class="section-title">النص التاني فين؟</h2>
-      <p class="game-hint    }
-
-    /* MUSIC */
-    .music-btn { position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 100; width: 48px; height: 48px; border-radius: 50%; background: rgba(201,168,76,0.12); border: 1px solid var(--gold); color: var(--gold); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; backdrop-filter: blur(6px); }
-    .music-btn:hover { background: rgba(201,168,76,0.25); }
-
-    /* ENVELOPE */
-    #envelope-screen { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #2d1f0e 0%, #120e08 70%); }
-    .intro-petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .intro-petal { position: absolute; top: -60px; animation: fallPetal linear infinite; opacity: 0.7; }
-    @keyframes fallPetal { 0% { transform: translateY(0) rotate(0deg); opacity: 0.8; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
-    .envelope-wrap { text-align: center; position: relative; z-index: 1; animation: floatEnv 3.5s ease-in-out infinite; }
-    @keyframes floatEnv { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-    .monogram { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(4rem, 12vw, 8rem); color: var(--gold); text-shadow: 0 0 50px rgba(201,168,76,0.5); line-height: 1; margin-bottom: 0.5rem; }
-    .monogram span { color: var(--cream); }
-    .intro-subtitle { font-family: 'Lateef', serif; font-size: clamp(1.2rem, 3.5vw, 1.8rem); color: var(--gold-light); margin-bottom: 0.3rem; opacity: 0.85; }
-    .intro-names { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--cream); margin-bottom: 2rem; }
-    .enter-btn { background: transparent; border: 1.5px solid var(--gold); color: var(--gold-light); font-family: 'Amiri', serif; font-size: 1.2rem; padding: 0.75rem 2.5rem; border-radius: 60px; cursor: pointer; letter-spacing: 0.06em; transition: all 0.4s; position: relative; overflow: hidden; }
-    .enter-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); opacity: 0; transition: opacity 0.4s; border-radius: 60px; }
-    .enter-btn:hover { color: var(--deep); }
-    .enter-btn:hover::before { opacity: 1; }
-    .enter-btn span { position: relative; z-index: 1; }
-    #envelope-screen.fade-out { animation: fadeOut 0.8s ease forwards; }
-    @keyframes fadeOut { to { opacity: 0; pointer-events: none; } }
-
-    /* MAIN */
-    #main-content { position: relative; z-index: 1; opacity: 0; transition: opacity 0.8s 0.3s; }
-    #main-content.visible { opacity: 1; }
-
-    /* HERO */
-    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1.5rem; position: relative; background: radial-gradient(ellipse at 50% 35%, rgba(201,168,76,0.13) 0%, transparent 65%); }
-    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
-    .hero-bismillah { font-family: 'Lateef', serif; font-size: clamp(1.3rem, 4vw, 2rem); color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: slideDown 1s ease 0.5s forwards; }
-    .hero-names { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(3rem, 10vw, 7rem); color: var(--cream); line-height: 1.2; opacity: 0; animation: slideDown 1s ease 0.8s forwards; }
-    .hero-names .name-gold { color: var(--gold); }
-    .hero-names .connector { font-size: 0.42em; color: var(--gold-light); display: block; margin: 0.15rem 0; }
-    .hero-dua { font-family: 'Lateef', serif; font-size: clamp(1rem, 3vw, 1.5rem); color: var(--gold-light); max-width: 500px; line-height: 2.1; margin-top: 1.5rem; opacity: 0; animation: slideDown 1s ease 1.1s forwards; }
-    .hero-date { margin-top: 2.5rem; opacity: 0; animation: slideDown 1s ease 1.4s forwards; }
-    .date-pill { display: inline-block; border: 1px solid var(--gold); border-radius: 50px; padding: 0.5rem 2rem; font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--gold); letter-spacing: 0.04em; }
-    .hero-divider { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 2rem auto; opacity: 0; animation: fadeIn 1s ease 1.7s forwards; }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    /* SECTIONS */
-    section { padding: 4rem 1.5rem; position: relative; z-index: 1; }
-    .section-card { max-width: 700px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.22); border-radius: 20px; padding: 3rem 2rem; text-align: center; backdrop-filter: blur(4px); position: relative; overflow: hidden; }
-    .section-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .section-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .icon-circle { width: 64px; height: 64px; border-radius: 50%; background: rgba(201,168,76,0.1); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem; }
-    .section-title { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(1.5rem, 5vw, 2.2rem); color: var(--gold); margin-bottom: 0.8rem; }
-    .section-text { font-family: 'Amiri', serif; font-size: clamp(1.1rem, 3vw, 1.4rem); color: var(--gold-light); line-height: 1.9; }
-
-    /* COUNTDOWN */
-    .countdown-wrap { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-    .countdown-item { text-align: center; min-width: 65px; }
-    .countdown-num { font-family: 'Aref Ruqaa Ink', serif; font-size: clamp(2.2rem, 6vw, 3.8rem); color: var(--gold); display: block; line-height: 1; }
-    .countdown-label { font-family: 'Amiri', serif; font-size: 0.85rem; color: var(--gold-light); opacity: 0.75; margin-top: 0.3rem; }
-    .countdown-sep { font-family: 'Aref Ruqaa Ink', serif; font-size: 2.5rem; color: var(--gold); opacity: 0.45; align-self: flex-start; margin-top: 0.15rem; }
-
-    /* CONGRATS */
-    .congrats-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.9rem; }
-    .congrats-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 0.85rem 1.2rem; color: var(--cream); font-family: 'Amiri', serif; font-size: 1rem; resize: none; outline: none; transition: border-color 0.3s; direction: rtl; }
-    .congrats-input::placeholder { color: rgba(201,168,76,0.4); }
-    .congrats-input:focus { border-color: var(--gold); }
-    .send-btn { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); border: none; border-radius: 10px; padding: 0.85rem 2rem; color: var(--deep); font-family: 'Aref Ruqaa Ink', serif; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
-    .send-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-    .congrats-list { max-height: 200px; overflow-y: auto; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .congrats-item { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 0.6rem 1rem; font-family: 'Amiri', serif; font-size: 0.95rem; color: var(--gold-light); text-align: right; }
-    .congrats-list::-webkit-scrollbar { width: 4px; }
-    .congrats-list::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
-
     /* MODAL */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
@@ -489,4 +266,218 @@
         <h4>عاش 🎉</h4>
         <p>
           خلصت اللعبة بنجاح!<br/>
-          الوقت <span id="winTime"></span
+          الوقت <span id="winTime"></span> ثانية<br/>
+          الحركات <span id="winMoves"></span> حركة
+        </p>
+        <button class="share-result-btn" id="shareBtn">شارك النتيجة مع العروسين 💌</button><br/>
+        <button class="replay-btn" id="replayBtn">العب مرة تانية وكسر رقمك؟</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section>
+    <div class="section-card">
+      <div class="icon-circle">🗺️</div>
+      <h2 class="section-title">موقع القاعة</h2>
+      <p class="section-text" style="font-size:1rem;opacity:0.65;">مجمع قاعات فندق اكوا هاوس – مدينة نصر، القاهرة</p>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.456!2d31.3406!3d30.0563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583dfef8df10a5%3A0x89b66ff6401c8d62!2z2YXYrtin2YXYuSDZgtin2Lnig9ZYXQqiDZgdmF8ZZrSA!5e0!3m2!1sar!2seg!4v1748000000000!5m2!1sar!2seg"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a href="https://maps.app.goo.gl/ppYZXV46TDFJcHXE8" target="_blank" class="map-btn">افتح في خرائط جوجل 📍</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ornament"><div class="ornament-line"></div><span class="ornament-icon">💍</span><div class="ornament-line rev"></div></div>
+    <div class="footer-names">مُحَمَّد & آلاء</div>
+    <p class="footer-sub">بانتظاركم بكل حب وشوق</p>
+    <p class="footer-sub" style="margin-top:0.4rem;">٢٠٢٦ • ليلة العمر</p>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="thanksModal">
+  <div class="modal-box">
+    <div style="font-size:2.5rem;margin-bottom:0.8rem;">🤲</div>
+    <h3>وصلت دعواتك الرقيقة</h3>
+    <p>شكراً لمشاركتكم فرحتنا ودعواتكم الطيبة.</p>
+    <button class="modal-close" id="modalClose">إغلاق</button>
+  </div>
+</div>
+
+<script>
+/* STARS */
+(function(){
+  const c=document.getElementById('stars');
+  for(let i=0;i<130;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2.5+0.5;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--o:${0.3+Math.random()*0.7};animation-delay:${Math.random()*6}s;`;
+    c.appendChild(s);
+  }
+})();
+
+/* INTRO PETALS */
+(function(){
+  const emj=['🌸','🌺','✿','❀','🌼','💐'];
+  const c=document.getElementById('introPetals');
+  for(let i=0;i<20;i++){
+    const p=document.createElement('div');p.className='intro-petal';
+    p.textContent=emj[Math.floor(Math.random()*emj.length)];
+    p.style.cssText=`left:${Math.random()*100}%;font-size:${0.9+Math.random()*0.9}rem;animation-duration:${4+Math.random()*7}s;animation-delay:${Math.random()*5}s;`;
+    c.appendChild(p);
+  }
+})();
+
+/* FLOATING PETALS */
+(function(){
+  const emj=['🌸','🌺','✿','❀'];
+  const c=document.getElementById('petals');
+  for(let i=0;i<16;i++){
+    const p=document.createElement('div');p.className='petal';
+    p.textContent=emj[Math.floor(Math.random()*emj.length)];
+    p.style.cssText=`left:${Math.random()*100}%;font-size:${0.8+Math.random()*0.8}rem;opacity:${0.35+Math.random()*0.45};animation-duration:${9+Math.random()*12}s;animation-delay:${Math.random()*10}s;`;
+    c.appendChild(p);
+  }
+})();
+
+/* ENTER */
+document.getElementById('enterBtn').addEventListener('click',function(){
+  const s=document.getElementById('envelope-screen'),m=document.getElementById('main-content');
+  s.classList.add('fade-out');
+  setTimeout(()=>{s.style.display='none';m.classList.add('visible');},800);
+});
+
+/* MUSIC */
+const audio=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn');
+let playing=false;
+musicBtn.addEventListener('click',function(){
+  if(playing){audio.pause();musicBtn.textContent='🔇';}
+  else{audio.play().catch(()=>{});musicBtn.textContent='🔊';}
+  playing=!playing;
+});
+
+/* COUNTDOWN — 17 July 2026 8:00 PM */
+const target=new Date('2026-07-17T20:00:00');
+function tick(){
+  const diff=target-new Date();
+  if(diff<=0){['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id=>document.getElementById(id).textContent='00');return;}
+  const pad=n=>String(n).padStart(2,'0');
+  document.getElementById('cd-days').textContent=pad(Math.floor(diff/86400000));
+  document.getElementById('cd-hours').textContent=pad(Math.floor((diff%86400000)/3600000));
+  document.getElementById('cd-mins').textContent=pad(Math.floor((diff%3600000)/60000));
+  document.getElementById('cd-secs').textContent=pad(Math.floor((diff%60000)/1000));
+}
+tick();setInterval(tick,1000);
+
+/* CONGRATS */
+const msgs=[];
+document.getElementById('sendBtn').addEventListener('click',function(){
+  const n=document.getElementById('congratsName').value.trim();
+  const m=document.getElementById('congratsMsg').value.trim();
+  if(!n||!m)return;
+  msgs.unshift({name:n,msg:m});
+  document.getElementById('congratsName').value='';
+  document.getElementById('congratsMsg').value='';
+  document.getElementById('congratsList').innerHTML=msgs.map(x=>`<div class="congrats-item"><strong style="color:var(--gold)">${x.name}:</strong> ${x.msg}</div>`).join('');
+  document.getElementById('thanksModal').classList.add('open');
+});
+document.getElementById('modalClose').addEventListener('click',()=>document.getElementById('thanksModal').classList.remove('open'));
+document.getElementById('thanksModal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+
+/* ══════════════════════════════════
+   CLASSIC 15-PUZZLE (sliding tiles)
+   Numbers 1–15, tap adjacent to empty
+   ══════════════════════════════════ */
+(function(){
+  const N=4,TOTAL=N*N;
+  let tiles=[],moves=0,seconds=0,timerInt=null,started=false;
+
+  function init(){
+    // Begin solved, then do random valid moves to guarantee solvability
+    tiles=Array.from({length:TOTAL-1},(_,i)=>i+1);
+    tiles.push(0); // 0 = empty
+    let ei=TOTAL-1;
+    for(let k=0;k<400;k++){
+      const nb=neighbors(ei);
+      const j=nb[Math.floor(Math.random()*nb.length)];
+      tiles[ei]=tiles[j];tiles[j]=0;ei=j;
+    }
+    moves=0;seconds=0;started=false;
+    clearInterval(timerInt);
+    document.getElementById('moveCount').textContent=0;
+    document.getElementById('puzzleWin').style.display='none';
+    render();
+  }
+
+  function neighbors(i){
+    const r=Math.floor(i/N),c=i%N,nb=[];
+    if(r>0)nb.push(i-N);if(r<N-1)nb.push(i+N);
+    if(c>0)nb.push(i-1);if(c<N-1)nb.push(i+1);
+    return nb;
+  }
+
+  function render(){
+    const ei=tiles.indexOf(0);
+    const nb=new Set(neighbors(ei));
+    const g=document.getElementById('puzzleGrid');
+    g.innerHTML='';
+    tiles.forEach((v,i)=>{
+      const d=document.createElement('div');
+      if(v===0){
+        d.className='puzzle-tile empty';
+      } else {
+        d.className='puzzle-tile'+(nb.has(i)?' can-move':'');
+        d.textContent=v;
+        d.addEventListener('click',()=>move(i));
+      }
+      g.appendChild(d);
+    });
+  }
+
+  function move(i){
+    const ei=tiles.indexOf(0);
+    if(!neighbors(ei).includes(i))return;
+    tiles[ei]=tiles[i];tiles[i]=0;
+    moves++;
+    document.getElementById('moveCount').textContent=moves;
+    if(!started){
+      started=true;
+      timerInt=setInterval(()=>seconds++,1000);
+    }
+    render();
+    if(isWon())win();
+  }
+
+  function isWon(){
+    for(let i=0;i<TOTAL-1;i++)if(tiles[i]!==i+1)return false;
+    return tiles[TOTAL-1]===0;
+  }
+
+  function win(){
+    clearInterval(timerInt);
+    document.getElementById('winTime').textContent=seconds;
+    document.getElementById('winMoves').textContent=moves;
+    document.getElementById('puzzleWin').style.display='block';
+    document.getElementById('puzzleWin').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  document.getElementById('puzzleReset').addEventListener('click',init);
+  document.getElementById('replayBtn').addEventListener('click',init);
+  document.getElementById('shareBtn').addEventListener('click',function(){
+    const txt=`حليت لغز مُحَمَّد وآلاء في ${seconds} ثانية و ${moves} حركة! 🎉💍`;
+    if(navigator.share)navigator.share({title:'نتيجة اللغز',text:txt});
+    else if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>alert('تم النسخ!'));
+    else alert(txt);
+  });
+
+  init();
+})();
+</script>
+</body>
+</html>
